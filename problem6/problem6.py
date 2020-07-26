@@ -13,9 +13,9 @@ def sum_squares(number_of_terms):
 
 
 if __name__ == "__main__":
-    number_of_terms = 100
+    number_of_terms_problem = 100
 
-    square_of_sum = math.pow(gauss_series(number_of_terms), 2)
-    sum_of_squares = sum_squares(number_of_terms)
+    square_of_sum = math.pow(gauss_series(number_of_terms_problem), 2)
+    sum_of_squares = sum_squares(number_of_terms_problem)
 
     print(math.fabs(sum_of_squares - square_of_sum))
