@@ -15,7 +15,7 @@ def no_array_sieve_numbered_result(number_prime_numbers):
     return -1
 
 
-def no_array_sieve_numbered_result_2(number_prime_numbers):
+def no_array_sieve_numbered_result_while(number_prime_numbers):
     primes = []
     i = 2
     while len(primes) != number_prime_numbers:
@@ -24,7 +24,3 @@ def no_array_sieve_numbered_result_2(number_prime_numbers):
         i += 1
 
     return primes[len(primes)-1]
-
-
-if __name__ == "__main__":
-    print(no_array_sieve_numbered_result_2(1000000))
