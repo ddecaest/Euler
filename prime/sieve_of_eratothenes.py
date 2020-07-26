@@ -23,4 +23,12 @@ def no_array_sieve_numbered_result_while(number_prime_numbers):
             primes.append(i)
         i += 1
 
-    return primes[len(primes)-1]
+    return primes
+
+
+def no_array_sieve_numbered_result_while_return_primes(up_to):
+    primes = []
+    for i in range(2, up_to):
+        if __prime_test(primes, i):
+            primes.append(i)
+    return primes
