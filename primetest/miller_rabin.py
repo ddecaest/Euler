@@ -1,7 +1,7 @@
 import random
 
 
-def miller_rabin_prime_test(n, k):
+def prime_test(n, k):
     if n == 1:
         return False
     if n == 2 or n == 3:

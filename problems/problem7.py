@@ -4,7 +4,7 @@ import sys
 scriptpath = "../"
 sys.path.append(os.path.abspath(scriptpath))
 
-from prime import miller_rabin
+from primetest import miller_rabin
 
 
 if __name__ == "__main__":
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     current_number = 2
     while number_of_primes_found < number_of_primes_to_find:
-        if miller_rabin.miller_rabin_prime_test(current_number, 40):
+        if miller_rabin.prime_test(current_number, 40):
             number_of_primes_found += 1
         current_number += 1
 

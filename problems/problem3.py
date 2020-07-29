@@ -4,23 +4,14 @@ import sys
 scriptpath = "../"
 sys.path.append(os.path.abspath(scriptpath))
 
-from prime import miller_rabin
+from factorization import factorize
 
 
 def find_largest_prime_factor(number):
-    if number == 0:
-        return 0
+    factorization = factorize.factorize_number(number)
 
-    defactorized = number
-    for i in range(2, number):
-        is_prime = miller_rabin.miller_rabin_prime_test(i, 40)
-        if is_prime:
-            if i == defactorized:
-                return i
-            elif defactorized % i == 0:
-                defactorized = defactorized / i
-
-    return defactorized
+    largest_prime, power = factorization[len(factorization)-1]
+    return largest_prime
 
 
 if __name__ == "__main__":

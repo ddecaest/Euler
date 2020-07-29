@@ -1,4 +1,5 @@
 def divisible_by_required_integers(number):
+    # Meh
     if number == 0:
         return False
 
@@ -10,10 +11,8 @@ def divisible_by_required_integers(number):
 
 
 if __name__ == "__main__":
-    # Meh
+    candidate_number = 0
+    while not divisible_by_required_integers(candidate_number):
+        candidate_number += 1
 
-    number = 0
-    while not divisible_by_required_integers(number):
-        number += 1
-
-    print(number)
+    print(candidate_number)
