@@ -1,9 +1,10 @@
+import sys
+import os
 
-def factorial(number):
-    tally = 1
-    for i in range(2, number + 1):
-        tally *= i
-    return tally
+scriptpath = "../"
+sys.path.append(os.path.abspath(scriptpath))
+
+from util import factorial
 
 
 if __name__ == "__main__":
@@ -17,6 +18,6 @@ if __name__ == "__main__":
     grid_dimension = 20
 
     # the combination of A in A+B slots is (A+B)! / !A * !(B-A)
-    combinations = factorial(40)/(factorial(20) * factorial(20))
+    combinations = factorial.factorial(40)/(factorial.factorial(20) * factorial.factorial(20))
 
     print(combinations) # Isnt correct?

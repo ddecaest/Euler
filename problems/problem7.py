@@ -4,7 +4,7 @@ import sys
 scriptpath = "../"
 sys.path.append(os.path.abspath(scriptpath))
 
-from primetest import miller_rabin
+from util import miller_rabin
 
 
 if __name__ == "__main__":

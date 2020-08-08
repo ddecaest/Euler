@@ -4,7 +4,7 @@ import sys
 scriptpath = "../"
 sys.path.append(os.path.abspath(scriptpath))
 
-from factorization import factorize
+from util import factorize
 
 
 def find_largest_prime_factor(number):

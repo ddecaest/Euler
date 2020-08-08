@@ -4,9 +4,8 @@ import sys
 scriptpath = "../"
 sys.path.append(os.path.abspath(scriptpath))
 
-from factorization import factorize
+from util import factorize
 
-# TODO: https://www.mathblog.dk/triangle-number-with-more-than-500-divisors/
 
 def calculate_number_divisors(number):
     if number < 0:
