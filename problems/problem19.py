@@ -15,8 +15,7 @@ class MyDate:
                 return 29
             else:
                 return 28
-        # January (=0) is 31, after which (with the exception of february) it alternates between 30 and 31
-        if self.month_index % 2 == 0:
+        if self.month_index in [0, 2, 4, 6, 7, 9, 11]:
             return 31
         else:
             return 30
@@ -39,8 +38,12 @@ class MyDate:
             return self.month_index < other.month_index
         return self.day_index < other.day_index
 
+    def __le__(self, other):
+        return (self.year == other.year and self.month_index == other.month_index and self.day_index == other.day_index) \
+               or self < other
+
     def __str__(self):
-        return str(self.day_index+1) + "/" + str(self.month_index+1) + "/" + str(self.year) + " (type of day: " + str(self.type_of_day) + " )"
+        return str(self.day_index + 1) + "/" + str(self.month_index + 1) + "/" + str(self.year) + " (type of day: " + str(self.type_of_day) + " )"
 
 
 if __name__ == "__main__":
@@ -48,12 +51,8 @@ if __name__ == "__main__":
     start_date = MyDate(0, 0, 1901, -1)
     end_date = MyDate(30, 11, 2000, -1)
 
-    # Move to start of twentieth century
     while current_date < start_date:
         current_date.add_days(1)
-
-    # Something is wrong with my logic, we end up on the wrong type of day :/
-    current_date.type_of_day += 1
 
     number_of_sundays = 0
 
@@ -62,9 +61,10 @@ if __name__ == "__main__":
         current_date.add_days(1)
 
     # Iterate over sundays by adding 7 days until we pass the end_date
-    while current_date < end_date:
-        print(current_date)
-        number_of_sundays += 1
+    while current_date <= end_date:
+        if current_date.day_index == 0:
+            number_of_sundays += 1
+
         current_date.add_days(7)
 
     # Not correct...
