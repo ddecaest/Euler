@@ -67,5 +67,4 @@ if __name__ == "__main__":
 
         current_date.add_days(7)
 
-    # Not correct...
     print(number_of_sundays)
